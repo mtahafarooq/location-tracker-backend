@@ -12,7 +12,7 @@ const userSchema = mongoose.Schema({
         required: true
     }
 });
-userSchema.pre('User', function(next){
+userSchema.pre('save', function(next){
     const user = this;
     if (!user.isModified()){
         return next();
